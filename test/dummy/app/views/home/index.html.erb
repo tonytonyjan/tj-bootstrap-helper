@@ -1,0 +1,24 @@
+<div class="hero-unit">
+  <h1>Hello, world!</h1>
+  <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+  <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+</div>
+
+<%= spans %w(asfd qwer zxcv), fluid: true do |word| %>
+  <h2><%= word %></h2>
+  <p>content</p>
+<% end %>
+
+<%= spans @posts, :fluid => true, :span => 3 do |post| %>
+  <h2><%= post.title %></h2>
+  <p><%= post.content %></p>
+  <p><%= link_to "View details", post, :class => "btn" %></p>
+<% end %>
+
+<%= thumbs @posts, "image_url", :span => 2 %>
+
+<%= thumbs @posts, "image_url" do |post| %>
+  <h2><%= post.title %></h2>
+  <p><%= post.content %></p>
+  <p><a class="btn" href="#">View details &raquo;</a></p>
+<% end %>
