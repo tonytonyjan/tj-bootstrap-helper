@@ -5,7 +5,7 @@ require "bootstrap-helper/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "bootstrap-helper"
+  s.name        = "bootstrap_helper"
   s.version     = BootstrapHelper::VERSION
   s.authors     = ["Tony Jian"]
   s.email       = ["tonytonyjan@gmail.com"]
