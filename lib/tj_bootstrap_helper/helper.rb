@@ -5,7 +5,7 @@ module TJBootstrapHelper
     # size = 1, &block
     def page_header *args, &block
       if block_given?
-        size = (1..6) === args.first ? args.first : 12
+        size = (1..6) === args.first ? args.first : 1
         content_tag :div, :class => "page-header" do
           content_tag "h#{size}" do
             capture(&block)
