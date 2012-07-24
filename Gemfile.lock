@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tj_bootstrap_helper (0.0.8)
+    tj_bootstrap_helper (0.0.9)
       dynamic_form
       rails (~> 3.2.6)
       will_paginate (~> 3.0)

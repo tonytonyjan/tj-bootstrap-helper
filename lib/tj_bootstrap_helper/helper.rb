@@ -1,6 +1,6 @@
 module TJBootstrapHelper
   module Helper
-    def record_messages object
+    def record_message object
       error_messages_for object, :class=>"alert alert-block alert-error", :header_tag=>"h4"
     end
 
