@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tj_bootstrap_helper (0.0.3)
+    tj_bootstrap_helper (0.0.4)
       rails (~> 3.2.6)
       will_paginate (~> 3.0)
 
