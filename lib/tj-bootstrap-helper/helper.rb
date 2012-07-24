@@ -1,4 +1,4 @@
-module BootstrapHelper
+module TJBootstrapHelper
   module Helper
     def page_header title, size = 1
       content_tag :div, :class => "page-header" do
@@ -76,4 +76,4 @@ module BootstrapHelper
     end
   end
 end
-ActionView::Base.send :include, BootstrapHelper::Helper
+ActionView::Base.send :include, TJBootstrapHelper::Helper

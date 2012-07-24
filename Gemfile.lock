@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bootstrap-helper (0.0.1)
+    tj_bootstrap_helper (0.0.1)
       rails (~> 3.2.6)
 
 GEM
@@ -94,7 +94,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  bootstrap-helper!
   faker
   jquery-rails
   sqlite3
+  tj_bootstrap_helper!
