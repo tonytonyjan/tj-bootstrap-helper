@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :tj-bootstrap-helper do
+# task :tj_bootstrap_helper do
 #   # Task goes here
 # end
