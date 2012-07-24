@@ -4,4 +4,97 @@ This is Tony Jian's Bootstrap helper gem.
 
 == Install
 
-  gem 'tj_bootstrap_helper', :git => "git://github.com/tonytonyjan/tj_bootstrap_helper.git"
+  gme 'tj_bootstrap_helper'
+or
+  gem 'tj_bootstrap_helper', :git => "git://github.com/tonytonyjan/tj-bootstrap-helper.git"
+
+== Helpers Usage
+=== page_header
+
+  <%= page_header @post.title %>
+  # => <div class="page-header"><h1><%= @post.content %></h1></div>
+
+  <%= page_header @post.title, 2 %>
+  # => <div class="page-header"><h2><%= @post.content %></h2></div>
+
+=== spans
+==== Render Array
+
+  <%= spans %w(asfd qwer zxcv), fluid: true do |word| %>
+    <h2><%= word %></h2>
+    <p>content</p>
+  <% end %>
+
+  # =>
+
+  <div class="row-fluid">
+    <div class="span4"><h2>asfd</h2><p>content</p></div>
+    <div class="span4"><h2>qwer</h2><p>content</p></div>
+    <div class="span4"><h2>zxcv</h2><p>content</p></div>
+  </div>
+
+==== Render Resources
+
+  <%= spans @posts, :span => 3, :slice => 2 do |post| %>
+    <h2><%= post.title %></h2>
+    <p><%= post.content %></p>
+  <% end %>
+
+  # =>
+
+  <div class="row">
+    <div class="span3"><h2><%= post.title %></h2><p><%= post.content %></p></div>
+    <div class="span3"><h2><%= post.title %></h2><p><%= post.content %></p></div>
+  </div>
+
+  ...
+
+  <div class="row">
+    <div class="span3"><h2><%= post.title %></h2><p><%= post.content %></p></div>
+    <div class="span3"><h2><%= post.title %></h2><p><%= post.content %></p></div>
+  </div>
+
+=== thumbs
+
+The usage of +thumbs+ is nothing more than +spans+,
+but it requires a parameter of image method name correspondding to each resource.
+
+==== Thumbnails Only
+
+  <%= thumbs @posts, "image_url", :span => 2, :slice => 2 %>
+
+  # =>
+
+  <ul class="thumbnails">
+    <li class="post span2" id="post_1"><a href="/posts/1" class="thumbnail"><%= image_tag post.image_url %></a></li>
+    <li class="post span2" id="post_2"><a href="/posts/2" class="thumbnail"><%= image_tag post.image_url %></a></li>
+  </ul>
+
+  ...
+
+  <ul class="thumbnails">
+    <li class="post span2" id="post_3"><a href="/posts/3" class="thumbnail"><%= image_tag post.image_url %></a></li>
+    <li class="post span2" id="post_4"><a href="/posts/4" class="thumbnail"><%= image_tag post.image_url %></a></li>
+  </ul>
+
+==== With Caption
+
+  <%= thumbs @posts, "image_url" do |post| %>
+    <h2><%= post.title %></h2>
+    <p><%= post.content %></p>
+  <% end %>
+
+  # =>
+
+  <ul class="thumbnails">
+    <li class="post span4" id="post_1">
+      <div class="thumbnail">
+        <%= image_tag post.image_url %>      
+        <h2><%= post.title %></h2>
+        <p><%= post.content %></p>
+      </div>
+    </li>
+
+    ...
+
+  </ul>
