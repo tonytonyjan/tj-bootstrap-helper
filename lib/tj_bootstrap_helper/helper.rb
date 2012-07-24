@@ -1,7 +1,8 @@
 module TJBootstrapHelper
   module Helper
-    # :args: title, size = 1
-    # :args: size = 1, &block
+    # title, size = 1
+    #
+    # size = 1, &block
     def page_header *args, &block
       if block_given?
         size = (1..6) === args.first ? args.first : 12
