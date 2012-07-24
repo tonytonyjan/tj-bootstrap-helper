@@ -1,12 +1,23 @@
 module TJBootstrapHelper
   module Helper
-    def page_header title, size = 1
-      content_tag :div, :class => "page-header" do
-        content_tag "h#{size}", title
+    # :args: title, size = 1
+    # :args: size = 1, &block
+    def page_header *args, &block
+      if block_given?
+        size = (1..6) === args.first ? args.first : 12
+        content_tag :div, :class => "page-header" do
+          content_tag "h#{size}" do
+            capture(&block)
+          end
+        end
+      else
+        title = args.first
+        size = (1..6) === args.second ? args.second : 1
+        content_tag :div, content_tag("h#{size}", title), :class => "page-header"
       end
     end
 
-    # Just like `link_to`, but wrap with li tag and set `class="active"`
+    # Just like +link_to+, but wrap with li tag and set +class="active"+
     # to corresponding page.
     def nav_li *args, &block
       options = (block_given? ? args.first : args.second) || {}
@@ -17,7 +28,7 @@ module TJBootstrapHelper
       end
     end
 
-    # = Options
+    # Options
     # span:: integer between 1..12. Item size.
     # slice:: integer between 1..12. Items per slice (row).
     # fluid:: boolean. Whether the div tag is fluid.
@@ -43,7 +54,7 @@ module TJBootstrapHelper
       ret
     end
 
-    # = Options
+    # Options
     # span:: integer between 1..12. Item size.
     # slice:: integer between 1..12. Items per slice.
     # url_method:: string or symbol. URL method of items, default is resources' RESTful URL.
