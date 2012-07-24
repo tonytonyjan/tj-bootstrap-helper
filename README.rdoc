@@ -4,4 +4,4 @@ This is Tony Jian's Bootstrap helper gem.
 
 == Install
 
-  gem 'bootstrap_helper', :git => "git://github.com/tonytonyjan/tj_bootstrap_helper.git"
+  gem 'tj_bootstrap_helper', :git => "git://github.com/tonytonyjan/tj_bootstrap_helper.git"

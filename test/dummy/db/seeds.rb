@@ -1,4 +1,4 @@
-12.times{
+120.times{
   Post.create(
     :title => Faker::Lorem.sentence,
     :content => Faker::Lorem.paragraphs.join("\n"),

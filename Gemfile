@@ -7,6 +7,7 @@ gemspec
 
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
+gem "will_paginate"
 gem "faker"
 
 # Declare any dependencies that are still in development here instead of in

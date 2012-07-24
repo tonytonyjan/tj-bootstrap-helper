@@ -1,8 +1,9 @@
 PATH
   remote: .
   specs:
-    tj_bootstrap_helper (0.0.1)
+    tj_bootstrap_helper (0.0.2)
       rails (~> 3.2.6)
+      will_paginate (~> 3.0)
 
 GEM
   remote: http://rubygems.org/
@@ -89,6 +90,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.33)
+    will_paginate (3.0.3)
 
 PLATFORMS
   x86-mingw32
@@ -98,3 +100,4 @@ DEPENDENCIES
   jquery-rails
   sqlite3
   tj_bootstrap_helper!
+  will_paginate

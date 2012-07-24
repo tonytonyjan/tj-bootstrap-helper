@@ -22,7 +22,7 @@ module TJBootstrapHelper
     # slice:: integer between 1..12. Items per slice (row).
     # fluid:: boolean. Whether the div tag is fluid.
     def spans resources, options = {}, &block
-      return unless resources.is_a? Array
+      return unless resources.is_a?(Array) || resources.is_a?(ActiveRecord::Relation)
       options[:span] ||= 4
       options[:slice] ||= 12/options[:span]
       options[:fluid] ||= false
@@ -48,7 +48,7 @@ module TJBootstrapHelper
     # slice:: integer between 1..12. Items per slice.
     # url_method:: string or symbol. URL method of items, default is resources' RESTful URL.
     def thumbs resources, image_url_method, options = {}, &block
-      return unless resources.is_a? Array
+      return unless resources.is_a?(Array) || resources.is_a?(ActiveRecord::Relation)
       options[:span] ||= 4
       options[:slice] ||= 12/options[:span]
       ret = "".html_safe
