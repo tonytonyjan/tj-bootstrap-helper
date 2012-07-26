@@ -105,6 +105,6 @@ module TJBootstrapHelper
       end
       ret
     end
+    ::ActionView::Base.send :include, self
   end
 end
-ActionView::Base.send :include, TJBootstrapHelper::Helper

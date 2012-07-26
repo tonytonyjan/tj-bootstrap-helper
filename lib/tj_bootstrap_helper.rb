@@ -1,7 +1,7 @@
 require "tj_bootstrap_helper/version"
-require "tj_bootstrap_helper/helper"
 
 module TJBootstrapHelper
-  class Engine < Rails::Engine
+  module Rails
+    require "tj_bootstrap_helper/engine"
   end
 end
